@@ -1,0 +1,91 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you give
+% someone the link to this page, they can edit at the same
+% time. See the help menu above for more info. Enjoy!
+%
+% Note: you can export the pdf to see the result at full
+% resolution.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+%%%<
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{5pt}%
+%%%>
+
+\begin{comment}
+:Title: Simple flow chart
+:Tags: Diagrams
+
+With PGF/TikZ you can draw flow charts with relative ease. This flow chart from [1]_
+outlines an algorithm for identifying the parameters of an autonomous underwater vehicle model. 
+
+Note that relative node
+placement has been used to avoid placing nodes explicitly. This feature was
+introduced in PGF/TikZ >= 1.09.
+
+.. [1] Bossley, K.; Brown, M. & Harris, C. Neurofuzzy identification of an autonomous underwater vehicle `International Journal of Systems Science`, 1999, 30, 901-913 
+
+
+\end{comment}
+
+\begin{document}
+\pagestyle{empty}
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=2.5cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, node distance=2cm,
+    text width=6em, text centered, rounded corners, minimum height=1em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+    
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    \node [block] (init) {start};
+%    \node [cloud, left of=init] (expert) {expert};
+%    \node [cloud, right of=init] (system) {system};
+    \node [block, text width=10em, below of = init] (initpop) {generate initial population};
+    \node [block, below of=initpop] (calcfitness) {calculate fitness of each individual };
+%     \node [block, below of=initpop] (evaluate) {evaluate candidate models};
+%     \node [block, left of=evaluate, node distance=3cm] (update) {update model};
+    \node [block, right of = calcfitness, right=1cm, yshift=-.5cm] (selection) {selection};
+    \node [block, below of = selection, yshift=.5cm] (crossover) {crossover};
+    \node [block, below of = crossover, yshift=.5cm] (mutation) {mutation};
+    \node [block, below of=calcfitness] (newpop) {create new population};
+    \node [decision, below of=newpop] (decide) {end condition};
+    \node [block, below of=decide, node distance=2cm] (stop) {stop};
+    % Draw edges
+    \path [line] (init) -- (initpop);
+    \path [line] (initpop) -- (calcfitness);
+    \path [line] (calcfitness) -- (newpop);
+
+
+    \path [line] ([yshift=0.1cm] newpop.east) -| ([xshift=-.82cm] selection.west)
+                          -- (selection.west);
+    \path [line] (selection) -- (crossover);
+    \path [line] (crossover) -- (mutation);
+    \path [line] (mutation) -| ([xshift=1cm, yshift=-0.1cm] newpop.east)
+                            -- ([yshift=-0.1cm] newpop.east);
+    
+    \path [line] (newpop) -- (decide);
+    \path [line] (decide) -| node [near start] {no} ([xshift=-1cm] newpop.west)
+%                         |- ([yshift=+1cm, xshift=-.2cm] init.north) coordinate (aux)
+                        -- (newpop);
+%     \path [line] (decide) |- node[near start] ([xshift=-1cm] newpop.west) {yes} (newpop);
+%     \path [line] (update) |- (init-pop);
+    \path [line] (decide) -- node {yes}(stop);
+\end{tikzpicture}
+
+
+\end{document}
