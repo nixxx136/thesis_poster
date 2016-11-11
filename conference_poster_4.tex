@@ -1,286 +1,312 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% baposter Landscape Poster
-% LaTeX Template
-% Version 1.0 (11/06/13)
-%
-% baposter Class Created by:
-% Brian Amberg (baposter@brian-amberg.de)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% baposter Landscape Poster
+	% LaTeX Template
+	% Version 1.0 (11/06/13)
+	%
+	% baposter Class Created by:
+	% Brian Amberg (baposter@brian-amberg.de)
+	%
+	% This template has been downloaded from:
+	% http://www.LaTeXTemplates.com
+	%
+	% License:
+	% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+	%----------------------------------------------------------------------------------------
+	%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+	%----------------------------------------------------------------------------------------
 
-\documentclass[landscape,a0paper,fontscale=0.285]{baposter} % Adjust the font scale/size here
+	\documentclass[landscape,a0paper,fontscale=0.285]{baposter} % Adjust the font scale/size here
 
-\usepackage{graphicx} % Required for including images
-\graphicspath{{figures/}} % Directory in which figures are stored
+	\usepackage{graphicx} % Required for including images
+	\graphicspath{{figures/}} % Directory in which figures are stored
 
-\usepackage{amsmath} % For typesetting math
-\usepackage{amssymb} % Adds new symbols to be used in math mode
+	\usepackage{amsmath} % For typesetting math
+	\usepackage{amssymb} % Adds new symbols to be used in math mode
 
-\usepackage{booktabs} % Top and bottom rules for tables
-\usepackage{enumitem} % Used to reduce itemize/enumerate spacing
-\usepackage{palatino} % Use the Palatino font
-\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+	\usepackage{booktabs} % Top and bottom rules for tables
+	\usepackage{enumitem} % Used to reduce itemize/enumerate spacing
+	\usepackage{palatino} % Use the Palatino font
+	\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 
-\usepackage{multicol} % Required for multiple columns
-\setlength{\columnsep}{1.5em} % Slightly increase the space between columns
-\setlength{\columnseprule}{0mm} % No horizontal rule between columns
+	\usepackage{multicol} % Required for multiple columns
+	\setlength{\columnsep}{1.5em} % Slightly increase the space between columns
+	\setlength{\columnseprule}{0mm} % No horizontal rule between columns
 
-\usepackage{tikz} % Required for flow chart
-\usetikzlibrary{shapes,arrows} % Tikz libraries required for the flow chart in the template
+	% \usepackage{graphicx}% http://tex.stackexchange.com/questions/25887/how-to-move-a-whole-tikzpicture
 
-\newcommand{\compresslist}{ % Define a command to reduce spacing within itemize/enumerate environments, this is used right after \begin{itemize} or \begin{enumerate}
-\setlength{\itemsep}{1pt}
-\setlength{\parskip}{0pt}
-\setlength{\parsep}{0pt}
-}
+	\usepackage{tikz} % Required for flow chart
+	\usetikzlibrary{positioning,shapes,arrows} % Tikz libraries required for the flow chart in the template
 
-\definecolor{lightblue}{rgb}{0.145,0.6666,1} % Defines the color used for content box headers
+	\newcommand{\compresslist}{ % Define a command to reduce spacing within itemize/enumerate environments, this is used right after \begin{itemize} or \begin{enumerate}
+	\setlength{\itemsep}{1pt}
+	\setlength{\parskip}{0pt}
+	\setlength{\parsep}{0pt}
+	}
 
-\begin{document}
+	\definecolor{lightblue}{rgb}{0.145,0.6666,1} % Defines the color used for content box headers
+	\definecolor{maroon}{rgb}{128,0,0} % Defines the color used for content box headers
+	\begin{document}
 
-\begin{poster}
-{
-headerborder=closed, % Adds a border around the header of content boxes
-colspacing=1em, % Column spacing
-bgColorOne=white, % Background color for the gradient on the left side of the poster
-bgColorTwo=white, % Background color for the gradient on the right side of the poster
-borderColor=lightblue, % Border color
-headerColorOne=black, % Background color for the header in the content boxes (left side)
-headerColorTwo=lightblue, % Background color for the header in the content boxes (right side)
-headerFontColor=white, % Text color for the header text in the content boxes
-boxColorOne=white, % Background color of the content boxes
-textborder=roundedleft, % Format of the border around content boxes, can be: none, bars, coils, triangles, rectangle, rounded, roundedsmall, roundedright or faded
-eyecatcher=true, % Set to false for ignoring the left logo in the title and move the title left
-headerheight=0.1\textheight, % Height of the header
-headershape=roundedright, % Specify the rounded corner in the content box headers, can be: rectangle, small-rounded, roundedright, roundedleft or rounded
-headerfont=\Large\bf\textsc, % Large, bold and sans serif font in the headers of content boxes
-%textfont={\setlength{\parindent}{1.5em}}, % Uncomment for paragraph indentation
-linewidth=2pt % Width of the border lines around content boxes
-}
-%----------------------------------------------------------------------------------------
-%	TITLE SECTION 
-%----------------------------------------------------------------------------------------
-%
-{\includegraphics[height=4em]{logo.png}} % First university/lab logo on the left
-{\bf\textsc{Unnecessarily Complicated Research Title}\vspace{0.5em}} % Poster title
-{\textsc{\{ John Smith, James Smith and Jane Smith \} \hspace{12pt} University and Department Name}} % Author names and institution
-{\includegraphics[height=4em]{logo.png}} % Second university/lab logo on the right
+	\begin{poster}
+	{
+	headerborder=closed, % Adds a border around the header of content boxes
+	colspacing=1em, % Column spacing
+	bgColorOne=white, % Background color for the gradient on the left side of the poster
+	bgColorTwo=white, % Background color for the gradient on the right side of the poster
+	% borderColor=lightblue, % Border color
+	borderColor=maroon,
+	headerColorOne=black, % Background color for the header in the content boxes (left side)
+	% headerColorTwo=lightblue, % Background color for the header in the content boxes (right side)
+	headerColorTwo=maroon,
+	headerFontColor=white, % Text color for the header text in the content boxes
+	boxColorOne=white, % Background color of the content boxes
+	textborder=roundedleft, % Format of the border around content boxes, can be: none, bars, coils, triangles, rectangle, rounded, roundedsmall, roundedright or faded
+	eyecatcher=true, % Set to false for ignoring the left logo in the title and move the title left
+	headerheight=0.1\textheight, % Height of the header
+	headershape=roundedright, % Specify the rounded corner in the content box headers, can be: rectangle, small-rounded, roundedright, roundedleft or rounded
+	headerfont=\Large\bf\textsc, % Large, bold and sans serif font in the headers of content boxes
+	%textfont={\setlength{\parindent}{1.5em}}, % Uncomment for paragraph indentation
+	linewidth=2pt % Width of the border lines around content boxes
+	}
+	%----------------------------------------------------------------------------------------
+	%	TITLE SECTION 
+	%----------------------------------------------------------------------------------------
+	%
+	% {\includegraphics[height=4em]{logo.png}} % First university/lab logo on the left
+	{\includegraphics[height=4em]{UMD.png}}
+	{\bf\textsc{Human Interacted Genetic Alogrithm Application}\vspace{0.5em}} % Poster title
+	{\textsc{\{ Penghuan Ni, Rich Maclin and Peter Willemsen \} \hspace{12pt} University of Minnesota Duluth}} % Author names and institution
+	% {\includegraphics[height=4em]{logo.png}} % Second university/lab logo on the right
+	{\includegraphics[height=4em]{UMN.jpg}}
 
-%----------------------------------------------------------------------------------------
-%	OBJECTIVES
-%----------------------------------------------------------------------------------------
+	%----------------------------------------------------------------------------------------
+	%	Abstract
+	%----------------------------------------------------------------------------------------
 
-\headerbox{Objectives}{name=objectives,column=0,row=0}{
+	\headerbox{Abstract}{name=abstract,column=0,row=0}{
 
-Donec non nisl a \textbf{arcu consequat} varius. Sed suscipit cursus luctus. Nulla sit amet elit augue. Curabitur scelerisque mollis dolor, quis blandit lorem condimentum at. Pellentesque sed nibh vel \textbf{dolor} sagittis semper. 
+	% Donec non nisl a \textbf{arcu consequat} varius. Sed suscipit cursus luctus. Nulla sit amet elit augue. Curabitur scelerisque mollis dolor, quis blandit lorem condimentum at. Pellentesque sed nibh vel \textbf{dolor} sagittis semper. 
 
-\begin{enumerate}\compresslist
-\item Feugiat vitae elit
-\item bibendum ante sed lacinia eros in
-\item Curabitur scelerisque arcu consequat varius
-\item Dapibus nulla id purus consectetur
-\item Fringilla integer 
-\end{enumerate}
+	By using the human interacted Genetic Algorithm(GA), we expect to have a human preferred solution for urban design problem. Human can select different method for selection, crossover, and mutation operations. When we run the human interacted GA, people can change the fitness value for some of the chromosome based on their preference. By using the feedbacks from the user, we expect to change the direction of GA. 
 
-\vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
-}
+	\begin{enumerate}\compresslist
+	\item 
+	\item 
+	% \item 
+	% \item 
+	% \item 
+	\end{enumerate}
 
-%----------------------------------------------------------------------------------------
-%	INTRODUCTION
-%----------------------------------------------------------------------------------------
+	\vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
+	}
 
-\headerbox{Introduction}{name=introduction,column=1,row=0,bottomaligned=objectives}{
+	%----------------------------------------------------------------------------------------
+	%	INTRODUCTION
+	%----------------------------------------------------------------------------------------
 
-Aliquam non lacus dolor, \textit{a aliquam quam}. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla in nibh mauris. Donec vel ligula nisi, a lacinia arcu. Sed mi dui, malesuada vel consectetur et, egestas porta nisi. Sed eleifend pharetra dolor, et dapibus est vulputate eu. \textbf{Integer faucibus elementum felis vitae fringilla.} In hac habitasse platea dictumst. Duis tristique rutrum nisl, nec vulputate elit porta ut. Donec sodales sollicitudin turpis sed convallis. Etiam mauris ligula, blandit adipiscing condimentum eu, dapibus pellentesque risus.
-}
+	\headerbox{Introduction}{name=introduction,column=1,row=0,bottomaligned=abstract}{
 
-%----------------------------------------------------------------------------------------
-%	RESULTS 1
-%----------------------------------------------------------------------------------------
+	Aliquam non lacus dolor, \textit{a aliquam quam}. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla in nibh mauris. Donec vel ligula nisi, a lacinia arcu. Sed mi dui, malesuada vel consectetur et, egestas porta nisi. Sed eleifend pharetra dolor, et dapibus est vulputate eu. \textbf{Integer faucibus elementum felis vitae fringilla.} In hac habitasse platea dictumst. Duis tristique rutrum nisl, nec vulputate elit porta ut. Donec sodales sollicitudin turpis sed convallis. Etiam mauris ligula, blandit adipiscing condimentum eu, dapibus pellentesque risus.
+	}
 
-\headerbox{Results 1}{name=results,column=2,span=2,row=0}{
+	%----------------------------------------------------------------------------------------
+	%	GA EXPLAINATION
+	%----------------------------------------------------------------------------------------
 
-\begin{multicols}{2}
-\vspace{1em}
-\begin{center}
-\includegraphics[width=0.8\linewidth]{placeholder}
-\captionof{figure}{Figure caption}
-\end{center}
+	\headerbox{GA Explanation}{name=gaexplanation,column=2,span=2,row=0}{
 
-Aliquam auctor, metus id ultrices porta, risus enim cursus sapien, quis iaculis sapien tortor sed odio. Mauris ante orci, euismod vitae tincidunt eu, porta ut neque. Aenean sapien est, viverra vel lacinia nec, venenatis eu nulla. Maecenas ut nunc nibh, et tempus libero. Aenean vitae risus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
-\end{multicols}
+	\begin{multicols}{2}
+	
+	% Define block styles
 
-%------------------------------------------------
+	\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+	text width=4.5em, text badly centered, node distance=2.5cm, inner sep=0pt]
+	\tikzstyle{block} = [rectangle, draw, fill=blue!20, node distance=2cm,
+	text width=6em, text centered, rounded corners, minimum height=1em]
+	\tikzstyle{line} = [draw, -latex']
+	\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+	minimum height=2em]
 
-\begin{multicols}{2}
-\vspace{1em}
-Sed fringilla tempus hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam ut elit sit amet metus lobortis consequat sit amet in libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel sem magna. Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing. Quisque vestibulum eros eu.
+	\hspace*{1.5em}{
+		\begin{tikzpicture}[node distance = 2cm, auto]
+		% \hspace*{3em}
+		% Place nodes
+		\node [block] (init) {start};
+		\node [block, text width=10em, below = .8cm of init] (initpop) {generate initial population};
+		\node [block, below = .81cm of initpop] (calcfitness) {calculate fitness of each individual };
+		%     \node [block, below of=initpop] (evaluate) {evaluate candidate models};
+		%     \node [block, left of=evaluate, node distance=3cm] (update) {update model};
+		\node [block, below = .8cm of calcfitness] (newpop) {create new population};
+		\node [block, right = 1.5cm of newpop] (crossover) {crossover};
+		\node [block, above = 1cm of crossover] (selection) {selection};
+		\node [block, below = 1cm of crossover] (mutation) {mutation};
+		\node [decision, below = .8cm of newpop] (decide) {end condition};
+		\node [block, below = .8cm of decide, node distance=2cm] (stop) {stop};
+		    % Draw edges
+	    \path [line] (init) -- (initpop);
+	    \path [line] (initpop) -- (calcfitness);
+	    \path [line] (calcfitness) -- (newpop);
+	    \path [line] ([yshift=0.1cm] newpop.east) -| ([xshift=-.82cm] selection.west) -- (selection.west);
+	    \path [line] (selection) -- (crossover);
+	    \path [line] (crossover) -- (mutation);
+	    \path [line] (mutation) -| ([xshift=.7cm, yshift=-0.1cm] newpop.east) -- ([yshift=-0.1cm] newpop.east);
+	    \path [line] (newpop) -- (decide);
+	    \path [line] (decide) -| node [near start] {no} ([xshift=-1.5cm] newpop.west) -- (newpop);
+		\path [line] (decide) -- node {yes}(stop);
+		\end{tikzpicture}
+	}
 
-\begin{center}
-\includegraphics[width=0.8\linewidth]{placeholder}
-\captionof{figure}{Figure caption}
-\end{center}
+	\vspace{3em}
 
-\end{multicols}
-}
+	\begin{itemize}\compresslist
+	\item User specified parameters: number of variables, possible value of each variable, size of population, number of generations, fitness function, crossover probability, mutation probability, selection type, crossover type, and mutation type.
+	\item Generate new population: generate the first generation of the solution
+	\item Create new population: applying selection, crossover, and mutation to the previous generation, and get a new population, which should improve the solution.
+	\item Encoding method: binary encoding, use binary string to represent each variable
+	\item Selection: selection a pair of parents and do the crossover and mutation operation on them. Support methods are roulette-wheel, 
+	\item Crossover: exchange bits of binary string between two parents based on crossover probability and produce two children. Support methods are single-point,
+	\item Mutation: mutate bits of children's binary strings based on mutation probability. Support methods are single-point,
+	\end{itemize}
 
-%----------------------------------------------------------------------------------------
-%	REFERENCES
-%----------------------------------------------------------------------------------------
+	\end{multicols}
+	}
 
-\headerbox{References}{name=references,column=0,above=bottom}{
+	%----------------------------------------------------------------------------------------
+	%	REFERENCES
+	%----------------------------------------------------------------------------------------
 
-\renewcommand{\section}[2]{\vskip 0.05em} % Get rid of the default "References" section title
-\nocite{*} % Insert publications even if they are not cited in the poster
-\small{ % Reduce the font size in this block
-\bibliographystyle{unsrt}
-\bibliography{sample} % Use sample.bib as the bibliography file
-}}
+	\headerbox{References}{name=references,column=0,above=bottom}{
 
-%----------------------------------------------------------------------------------------
-%	FUTURE RESEARCH
-%----------------------------------------------------------------------------------------
+	\renewcommand{\section}[2]{\vskip 0.05em} % Get rid of the default "References" section title
+	\nocite{*} % Insert publications even if they are not cited in the poster
+	\small{ % Reduce the font size in this block
+	\bibliographystyle{unsrt}
+	\bibliography{sample} % Use sample.bib as the bibliography file
+	}}
 
-\headerbox{Future Research}{name=futureresearch,column=1,span=2,aligned=references,above=bottom}{ % This block is as tall as the references block
+	%----------------------------------------------------------------------------------------
+	%	FUTURE RESEARCH
+	%----------------------------------------------------------------------------------------
 
-\begin{multicols}{2}
-Integer sed lectus vel mauris euismod suscipit. Praesent a est a est ultricies pellentesque. Donec tincidunt, nunc in feugiat varius, lectus lectus auctor lorem, egestas molestie risus erat ut nibh.
+	\headerbox{Future Research}{name=futureresearch,column=1,span=2,aligned=references,above=bottom}{ % This block is as tall as the references block
 
-Maecenas viverra ligula a risus blandit vel tincidunt est adipiscing. Suspendisse mollis iaculis sem, in \emph{imperdiet} orci porta vitae. Quisque id dui sed ante sollicitudin sagittis.
-\end{multicols}
-}
+	\begin{multicols}{2}
+	Integer sed lectus vel mauris euismod suscipit. Praesent a est a est ultricies pellentesque. Donec tincidunt, nunc in feugiat varius, lectus lectus auctor lorem, egestas molestie risus erat ut nibh.
 
-%----------------------------------------------------------------------------------------
-%	CONTACT INFORMATION
-%----------------------------------------------------------------------------------------
+	Maecenas viverra ligula a risus blandit vel tincidunt est adipiscing. Suspendisse mollis iaculis sem, in \emph{imperdiet} orci porta vitae. Quisque id dui sed ante sollicitudin sagittis.
+	\end{multicols}
+	}
 
-\headerbox{Contact Information}{name=contact,column=3,aligned=references,above=bottom}{ % This block is as tall as the references block
+	%----------------------------------------------------------------------------------------
+	%	CONTACT INFORMATION
+	%----------------------------------------------------------------------------------------
 
-\begin{description}\compresslist
-\item[Web] www.university.edu/smithlab
-\item[Email] john@smith.com
-\item[Phone] +1 (000) 111 1111
-\end{description}
-}
+	\headerbox{Contact Information}{name=contact,column=3,aligned=references,above=bottom}{ % This block is as tall as the references block
 
-%----------------------------------------------------------------------------------------
-%	CONCLUSION
-%----------------------------------------------------------------------------------------
+	\begin{description}\compresslist
+	\item[Web] www.university.edu/smithlab
+	\item[Email] john@smith.com
+	\item[Phone] +1 (000) 111 1111
+	\end{description}
+	}
 
-\headerbox{Conclusion}{name=conclusion,column=2,span=2,row=0,below=results,above=references}{
+	%----------------------------------------------------------------------------------------
+	%	CONCLUSION
+	%----------------------------------------------------------------------------------------
 
-\begin{multicols}{2}
+	\headerbox{Conclusion}{name=conclusion,column=2,span=2,row=0,below=gaexplanation,above=references}{
 
-\tikzstyle{decision} = [diamond, draw, fill=blue!20, text width=4.5em, text badly centered, node distance=2cm, inner sep=0pt]
-\tikzstyle{block} = [rectangle, draw, fill=blue!20, text width=5em, text centered, rounded corners, minimum height=4em]
-\tikzstyle{line} = [draw, -latex']
-\tikzstyle{cloud} = [draw, ellipse, fill=red!20, node distance=3cm, minimum height=2em]
+	\begin{multicols}{2}
 
-\begin{tikzpicture}[node distance = 2cm, auto]
-\node [block] (init) {Initialize Model};
-\node [cloud, left of=init] (Start) {Start};
-\node [cloud, right of=init] (Start2) {Start Two};
-\node [block, below of=init] (init2) {Initialize Two};
-\node [decision, below of=init2] (End) {End};
-\path [line] (init) -- (init2);
-\path [line] (init2) -- (End);
-\path [line, dashed] (Start) -- (init);
-\path [line, dashed] (Start2) -- (init);
-\path [line, dashed] (Start2) |- (init2);
-\end{tikzpicture}
+	
 
-%------------------------------------------------
+	%------------------------------------------------
 
-\begin{itemize}\compresslist
-\item Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh. Phasellus fermentum rutrum elementum. Nam quis justo lectus.
-\item Vestibulum sem ante, hendrerit a gravida ac, blandit quis magna.
-\item Donec sem metus, facilisis at condimentum eget, vehicula ut massa. Morbi consequat, diam sed convallis tincidunt, arcu nunc.
-\item Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
-\end{itemize}
+	\begin{itemize}\compresslist
+	\item 
+	\item 
+	\item 
+	\item 
+	\item 
+	\item 
+	\end{itemize}
 
-\end{multicols}
-\vspace{-2em}
-}
+	\end{multicols}
+	\vspace{-2em}
+	}
 
-%----------------------------------------------------------------------------------------
-%	MATERIALS AND METHODS
-%----------------------------------------------------------------------------------------
+	%----------------------------------------------------------------------------------------
+	%	MATERIALS AND METHODS
+	%----------------------------------------------------------------------------------------
 
-\headerbox{Materials \& Methods}{name=method,column=0,below=objectives,bottomaligned=conclusion}{ % This block's bottom aligns with the bottom of the conclusion block
+	\headerbox{Materials \& Methods}{name=method,column=0,below=abstract,bottomaligned=conclusion}{ % This block's bottom aligns with the bottom of the conclusion block
 
-The following materials were required to complete the research:
+	The following materials were required to complete the research:
 
-\begin{itemize}\compresslist
-\item Curabitur pellentesque dignissim
-\item Eu facilisis est tempus quis
-\item Duis porta consequat lorem
-\item Eu facilisis est tempus quis
-\end{itemize}
+	\begin{itemize}\compresslist
+	\item Curabitur pellentesque dignissim
+	\item Eu facilisis est tempus quis
+	\item Duis porta consequat lorem
+	\item Eu facilisis est tempus quis
+	\end{itemize}
 
-The following equations were used for statistical analysis:
+	The following equations were used for statistical analysis:
 
-\begin{equation}
-\cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
-\label{eq:refname}
-\end{equation}\
+	\begin{equation}
+	\cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
+	\label{eq:refname}
+	\end{equation}\
 
-\begin{equation}
-E = mc^{2}
-\label{eqn:Einstein}
-\end{equation}
+	\begin{equation}
+	E = mc^{2}
+	\label{eqn:Einstein}
+	\end{equation}
 
-Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin. Proin sollicitudin. Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh.
-}
+	Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin. Proin sollicitudin. Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh.
+	}
 
-%----------------------------------------------------------------------------------------
-%	RESULTS 2
-%----------------------------------------------------------------------------------------
+	%----------------------------------------------------------------------------------------
+	%	RESULTS 2
+	%----------------------------------------------------------------------------------------
 
-\headerbox{Results 2}{name=results2,column=1,below=objectives,bottomaligned=conclusion}{ % This block's bottom aligns with the bottom of the conclusion block
+	\headerbox{Results 2}{name=results2,column=1,below=abstract,bottomaligned=conclusion}{ % This block's bottom aligns with the bottom of the conclusion block
 
-Donec faucibus purus at tortor egestas eu fermentum dolor facilisis. Maecenas tempor dui eu neque fringilla rutrum. Mauris \emph{lobortis} nisl accumsan.
+	Donec faucibus purus at tortor egestas eu fermentum dolor facilisis. Maecenas tempor dui eu neque fringilla rutrum. Mauris \emph{lobortis} nisl accumsan.
 
-\begin{center}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\captionof{table}{Table caption}
-\end{center}
+	\begin{center}
+	\begin{tabular}{l l l}
+	\toprule
+	\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+	\midrule
+	Treatment 1 & 0.0003262 & 0.562 \\
+	Treatment 2 & 0.0015681 & 0.910 \\
+	Treatment 3 & 0.0009271 & 0.296 \\
+	\bottomrule
+	\end{tabular}
+	\captionof{table}{Table caption}
+	\end{center}
 
-Nulla ut porttitor enim. Suspendisse venenatis dui eget eros gravida tempor. Mauris feugiat elit et augue placerat ultrices. Morbi accumsan enim nec tortor consectetur non commodo.
+	Nulla ut porttitor enim. Suspendisse venenatis dui eget eros gravida tempor. Mauris feugiat elit et augue placerat ultrices. Morbi accumsan enim nec tortor consectetur non commodo.
 
-\begin{center}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\captionof{table}{Table caption}
-\end{center}
-}
+	\begin{center}
+	\begin{tabular}{l l l}
+	\toprule
+	\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+	\midrule
+	Treatment 1 & 0.0003262 & 0.562 \\
+	Treatment 2 & 0.0015681 & 0.910 \\
+	Treatment 3 & 0.0009271 & 0.296 \\
+	\bottomrule
+	\end{tabular}
+	\captionof{table}{Table caption}
+	\end{center}
+	}
 
-%----------------------------------------------------------------------------------------
+	%----------------------------------------------------------------------------------------
 
-\end{poster}
+	\end{poster}
 
-\end{document}
+	\end{document}

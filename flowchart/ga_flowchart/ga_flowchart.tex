@@ -13,7 +13,7 @@
 
 \usepackage[latin1]{inputenc}
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{positioning,shapes,arrows}
 
 %%%<
 \usepackage{verbatim}
@@ -55,8 +55,8 @@ introduced in PGF/TikZ >= 1.09.
     \node [block] (init) {start};
 %    \node [cloud, left of=init] (expert) {expert};
 %    \node [cloud, right of=init] (system) {system};
-    \node [block, text width=10em, below of = init] (initpop) {generate initial population};
-    \node [block, below of=initpop] (calcfitness) {calculate fitness of each individual };
+    \node [block, text width=10em, below =1cm of init] (initpop) {generate initial population};
+    \node [block, below =1cm of initpop] (calcfitness) {calculate fitness of each individual };
 %     \node [block, below of=initpop] (evaluate) {evaluate candidate models};
 %     \node [block, left of=evaluate, node distance=3cm] (update) {update model};
     \node [block, right of = calcfitness, right=1cm, yshift=-.5cm] (selection) {selection};

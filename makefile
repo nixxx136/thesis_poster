@@ -1,8 +1,8 @@
 target = conference_poster_4
-#all: open
+all: open
 
-#open: build
-#	open $(target).pdf &
+open: build
+	open $(target).pdf &
 
 build:
 	pdflatex $(target) # (this will generate a document with question marks in place of unknown references)
