@@ -1,4 +1,4 @@
-target = conference_poster_4
+target = ga
 all: open
 
 open: build
