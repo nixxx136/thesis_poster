@@ -30,6 +30,7 @@
 	\usepackage{enumitem} % Used to reduce itemize/enumerate spacing
 	\usepackage{palatino} % Use the Palatino font
 	\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+	\usepackage{url} % To insert ~ in:http://d.umn.edu/~sivelab/
 
 	\usepackage{multicol} % Required for multiple columns
 	\setlength{\columnsep}{1.5em} % Slightly increase the space between columns
@@ -77,46 +78,65 @@
 	%
 	% {\includegraphics[height=4em]{logo.png}} % First university/lab logo on the left
 	{\includegraphics[height=4em]{UMD.png}}
-	{\bf\textsc{Human Interacted Genetic Alogrithm Application}\vspace{0.5em}} % Poster title
+	{\bf\textsc{Human Steerable Genetic Alogrithm Application}\vspace{0.5em}} % Poster title
 	{\textsc{\{ Penghuan Ni, Rich Maclin and Peter Willemsen \} \hspace{12pt} University of Minnesota Duluth}} % Author names and institution
 	% {\includegraphics[height=4em]{logo.png}} % Second university/lab logo on the right
 	{\includegraphics[height=4em]{UMN.jpg}}
 
 	%----------------------------------------------------------------------------------------
-	%	Abstract
+	%	REFERENCES
 	%----------------------------------------------------------------------------------------
 
-	\headerbox{Abstract}{name=abstract,column=0,row=0}{
+	\headerbox{References}{name=references,column=0,above=bottom}{
 
-	% Donec non nisl a \textbf{arcu consequat} varius. Sed suscipit cursus luctus. Nulla sit amet elit augue. Curabitur scelerisque mollis dolor, quis blandit lorem condimentum at. Pellentesque sed nibh vel \textbf{dolor} sagittis semper. 
-
-	By using the human interacted Genetic Algorithm(GA), we expect to have a human preferred solution for urban design problem. Human can select different method for selection, crossover, and mutation operations. When we run the human interacted GA, people can change the fitness value for some of the chromosome based on their preference. By using the feedbacks from the user, we expect to change the direction of GA. 
-
-	\begin{enumerate}\compresslist
-	\item 
-	\item 
-	% \item 
-	% \item 
-	% \item 
-	\end{enumerate}
-
-	\vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
-	}
+	\renewcommand{\section}[2]{\vskip 0.05em} % Get rid of the default "References" section title
+	\nocite{*} % Insert publications even if they are not cited in the poster
+	\small{ % Reduce the font size in this block
+	\bibliographystyle{unsrt}
+	\bibliography{sample} % Use sample.bib as the bibliography file
+	}}
 
 	%----------------------------------------------------------------------------------------
 	%	INTRODUCTION
 	%----------------------------------------------------------------------------------------
 
-	\headerbox{Introduction}{name=introduction,column=1,row=0,bottomaligned=abstract}{
+	\headerbox{Introduction}{name=introduction,column=0,row=0,above=references}{
 
-	% Aliquam non lacus dolor, \textit{a aliquam quam}. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla in nibh mauris. Donec vel ligula nisi, a lacinia arcu. Sed mi dui, malesuada vel consectetur et, egestas porta nisi. Sed eleifend pharetra dolor, et dapibus est vulputate eu. \textbf{Integer faucibus elementum felis vitae fringilla.} In hac habitasse platea dictumst. Duis tristique rutrum nisl, nec vulputate elit porta ut. Donec sodales sollicitudin turpis sed convallis. Etiam mauris ligula, blandit adipiscing condimentum eu, dapibus pellentesque risus.
+	Genetic Algorithm(GA) which imitates the process of natural selection has been applied into Artificial Intelligence area for a long time. From when GA was introduced to now, GA has been discussed and developed so many times. For some specific problems, we want to make some changes for GA. In our research, we will develop a human steerable genetic algorithm and apply it on the Optimization of Urban Design problem.
+
+	To optimize the Urban Design problem, we will take dynamic factors and human preferred factors into account, such as:
+	\begin{enumerate}\compresslist
+	\item the location and height of a building
+	\item wind energy and solar energy
+	\item use wind to blow the air pollution
+	\end{enumerate}
+
+	Also, the human steerable GA could consider people's opinions. It will ask feedback from the users, which could change the direction of GA reproduction process.\\
+
+	By using the human steerable genetic algorithm, we expect to have a human preferred solution for urban design problem. Human can select different method for selection, crossover, and mutation operations. When we run the human interacted GA, people can change the fitness value for some of the chromosome based on their preference. With considering the feedbacks from the user, we expect to change the direction of GA reproduction process. \\
+
+	Our method will be a good referencese for the future cities designers. Designers could use it to make a cleaner, more eco-friendly, and more comfortable city. Moreover, citizens could also participate in the city design, by giving feedback to the GA system. 
+	% \begin{enumerate}\compresslist
+	% \item 
+	% \item 
+	% \end{enumerate}
+
+	\vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
+	}
+
+	%----------------------------------------------------------------------------------------
+	%	CURRENT RESULTS
+	%----------------------------------------------------------------------------------------
+
+	\headerbox{Current Results}{name=results,column=3,row=0,bottomaligned=introduction}{
+
 	}
 
 	%----------------------------------------------------------------------------------------
 	%	GA EXPLAINATION
 	%----------------------------------------------------------------------------------------
 
-	\headerbox{GA Explanation}{name=gaexplanation,column=2,span=2,row=0}{
+	\headerbox{GA Explanation}{name=gaexplanation,column=1,span=2,row=0}{
 
 	\begin{multicols}{2}
 	
@@ -130,7 +150,7 @@
 	\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
 	minimum height=2em]
 
-	\hspace*{1.5em}{
+	\hspace*{1.5em}\vspace*{1.5em}{
 		\begin{tikzpicture}[node distance = 2cm, auto]
 		% \hspace*{3em}
 		% Place nodes
@@ -143,7 +163,9 @@
 		\node [block, right = 1.5cm of newpop] (crossover) {crossover};
 		\node [block, above = 1cm of crossover] (selection) {selection};
 		\node [block, below = 1cm of crossover] (mutation) {mutation};
+		\node [block, below = 1cm of mutation, fill=red!20] (feedback) {feedback};
 		\node [decision, below = .8cm of newpop] (decide) {end condition};
+
 		\node [block, below = .8cm of decide, node distance=2cm] (stop) {stop};
 		    % Draw edges
 	    \path [line] (init) -- (initpop);
@@ -152,6 +174,8 @@
 	    \path [line] ([yshift=0.1cm] newpop.east) -| ([xshift=-.82cm] selection.west) -- (selection.west);
 	    \path [line] (selection) -- (crossover);
 	    \path [line] (crossover) -- (mutation);
+	    \path [line, dashed, draw=red!80] (mutation) -- (feedback);
+	    \path [line, dashed, draw=red!80] (feedback) -| ([xshift=-0.8cm] mutation.west);
 	    \path [line] (mutation) -| ([xshift=.7cm, yshift=-0.1cm] newpop.east) -- ([yshift=-0.1cm] newpop.east);
 	    \path [line] (newpop) -- (decide);
 	    \path [line] (decide) -| node [near start] {no} ([xshift=-1.5cm] newpop.west) -- (newpop);
@@ -175,19 +199,6 @@
 	}
 
 	%----------------------------------------------------------------------------------------
-	%	REFERENCES
-	%----------------------------------------------------------------------------------------
-
-	\headerbox{References}{name=references,column=0,above=bottom}{
-
-	\renewcommand{\section}[2]{\vskip 0.05em} % Get rid of the default "References" section title
-	\nocite{*} % Insert publications even if they are not cited in the poster
-	\small{ % Reduce the font size in this block
-	\bibliographystyle{unsrt}
-	\bibliography{sample} % Use sample.bib as the bibliography file
-	}}
-
-	%----------------------------------------------------------------------------------------
 	%	FUTURE RESEARCH
 	%----------------------------------------------------------------------------------------
 
@@ -206,43 +217,72 @@
 
 	\headerbox{Contact Information}{name=contact,column=3,aligned=references,above=bottom}{ % This block is as tall as the references block
 
-	% \begin{description}\compresslist
-	% \item[Web] www.university.edu/smithlab
-	% \item[Email] john@smith.com
-	% \item[Phone] +1 (000) 111 1111
-	% \end{description}
+		\begin{description}
+		% \begin{itemize}
+		\compresslist
+			\item[Web] \url{www.d.umn.edu/~sivelab/}
+			\item[Email] nixxx136@d.umn.edu
+			\item[Phone] +1 (651) 322 0616
+		% \end{itemize}
+		\end{description}
 	}
 
 	%----------------------------------------------------------------------------------------
-	%	CONCLUSION
+	%	STEERABLE GA
 	%----------------------------------------------------------------------------------------
 
-	\headerbox{Conclusion}{name=conclusion,column=2,span=2,row=0,below=gaexplanation,above=references}{
+	\headerbox{Steerable GA}{name=steerablega,column=1,span=2,row=1,below=gaexplanation,above=references}{
 
-	\begin{multicols}{2}
+		\begin{multicols}{2}
 
-	
+		% Define block styles
 
-	%------------------------------------------------
+	\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+	text width=4.5em, text badly centered, node distance=2.5cm, inner sep=0pt]
+	\tikzstyle{block} = [rectangle, draw, fill=blue!20, node distance=2cm,
+	text width=6em, text centered, rounded corners, minimum height=1em]
+	\tikzstyle{line} = [draw, -latex']
+	\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+	minimum height=2em]
+
+	\hspace*{3.5em}{
+		\begin{tikzpicture}[node distance = 2cm, auto]
+		% \hspace*{3em}
+		% Place nodes
+		\node [block, text centered, minimum height=12em] (ga) {Genetic Algorithm};
+		\node [block, right = 1.5cm of ga, yshift=1.7cm, fill=red!20] (feedback1) {feedback1};
+		\node [block, below = .5cm of feedback1, fill=red!20] (feedback2) {feedback2};
+		\node [block, below = .5cm of feedback2, fill=red!20] (feedback3) {feedback3};
+		\node (e1)[below = 0.4 cm of feedback3]{\LARGE .};
+		\node (e2)[below = 0.6 cm of feedback3]{\LARGE .};
+		\node (e3)[below = 0.8 cm of feedback3]{\LARGE .};
+		\node [block, below = 1.2cm of feedback3, fill=red!20] (feedbackN) {feedbackN};
+
+		    % Draw edges
+	    \path [line] (feedback1.west) -- (feedback1.west -| ga.east);
+	    \path [line] (feedback2.west) -- (feedback2.west -| ga.east);
+	    \path [line] (feedback3.west) -- (feedback3.west -| ga.east);
+	    \path [line] (feedbackN.west) -- (feedbackN.west -| ga.east);
+
+		\end{tikzpicture}
+	}
 
 	\begin{itemize}\compresslist
-	\item 
-	\item 
-	\item 
-	\item 
-	\item 
-	\item 
+	\item GA is running at server side.
+	\item Different users give feedback to GA. In our case, those feedback could be the suggestion of the height or location of a building, if the user like a particular solution or not, etc.
+	\item GA takes users feedbacks into account and reproduces the solutions.
+	\item While users keep giving the GA feedback, GA could generate user preferred solutions.
 	\end{itemize}
 
-	\end{multicols}
-	\vspace{-2em}
+		\end{multicols}
+	% 	\vspace{-2em}
 	}
 
 	%----------------------------------------------------------------------------------------
 	%	MATERIALS AND METHODS
 	%----------------------------------------------------------------------------------------
 
-	\headerbox{Materials \& Methods}{name=method,column=0,below=abstract,bottomaligned=conclusion}{ % This block's bottom aligns with the bottom of the conclusion block
+	% \headerbox{Materials \& Methods}{name=method,column=0,below=abstract,above=references}{ % This block's bottom aligns with the bottom of the conclusion block
 
 	% The following materials were required to complete the research:
 
@@ -266,13 +306,13 @@
 	% \end{equation}
 
 	% Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin. Proin sollicitudin. Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh.
-	}
+	% }
 
 	%----------------------------------------------------------------------------------------
 	%	RESULTS 2
 	%----------------------------------------------------------------------------------------
 
-	\headerbox{Results 2}{name=results2,column=1,below=abstract,bottomaligned=conclusion}{ % This block's bottom aligns with the bottom of the conclusion block
+	% \headerbox{Results 2}{name=results2,column=1,below=abstract,bottomaligned=conclusion}{ % This block's bottom aligns with the bottom of the conclusion block
 
 	% Donec faucibus purus at tortor egestas eu fermentum dolor facilisis. Maecenas tempor dui eu neque fringilla rutrum. Mauris \emph{lobortis} nisl accumsan.
 
@@ -303,7 +343,7 @@
 	% \end{tabular}
 	% \captionof{table}{Table caption}
 	% \end{center}
-	}
+	% }
 
 	%----------------------------------------------------------------------------------------
 
