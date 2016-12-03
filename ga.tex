@@ -18,7 +18,7 @@
 	%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 	%----------------------------------------------------------------------------------------
 
-	\documentclass[landscape,a0paper,fontscale=0.285]{baposter} % Adjust the font scale/size here
+	\documentclass[landscape,a0paper,fontscale=0.275]{baposter} % Adjust the font scale/size here, before (fontscale=0.285)
 
 	\usepackage{graphicx} % Required for including images
 	\graphicspath{{figures/}} % Directory in which figures are stored
@@ -104,7 +104,7 @@
 
 	Genetic Algorithm(GA) which imitates the process of natural selection has been applied into Artificial Intelligence area for a long time. From when GA was introduced to now, GA has been discussed and developed so many times. For some specific problems, we want to make some changes for GA. In our research, we will develop a human steerable genetic algorithm and apply it on the Optimization of Urban Design problem.
 
-	To optimize the Urban Design problem, we will take dynamic factors and human preferred factors into account, such as:
+	To find the optimal solution for the Urban Design problem, we will take dynamic factors into account, such as:
 	\begin{enumerate}\compresslist
 	\item the location and height of a building
 	\item wind energy and solar energy
@@ -113,7 +113,7 @@
 
 	Also, the human steerable GA could consider people's opinions. It will ask feedback from the users, which could change the direction of GA reproduction process.\\
 
-	By using the human steerable genetic algorithm, we expect to have a human preferred solution for urban design problem. Human can select different method for selection, crossover, and mutation operations. When we run the human interacted GA, people can change the fitness value for some of the chromosome based on their preference. With considering the feedbacks from the user, we expect to change the direction of GA reproduction process. \\
+	By using the human steerable genetic algorithm, we expect to have a human preferred solution for urban design problem. Human can select different method for selection, crossover, and mutation operations. When we run the human interacted GA, people can change the fitness value for some of the chromosome based on their preference. \\
 
 	Our method will be a good referencese for the future cities designers. Designers could use it to make a cleaner, more eco-friendly, and more comfortable city. Moreover, citizens could also participate in the city design, by giving feedback to the GA system. 
 	% \begin{enumerate}\compresslist
@@ -122,14 +122,6 @@
 	% \end{enumerate}
 
 	\vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
-	}
-
-	%----------------------------------------------------------------------------------------
-	%	CURRENT RESULTS
-	%----------------------------------------------------------------------------------------
-
-	\headerbox{Current Results}{name=results,column=3,row=0,bottomaligned=introduction}{
-
 	}
 
 	%----------------------------------------------------------------------------------------
@@ -187,56 +179,22 @@
 
 	\begin{itemize}\compresslist
 	\item User specified parameters: number of variables, possible value of each variable, size of population, number of generations, fitness function, crossover probability, mutation probability, selection type, crossover type, and mutation type.
-	\item Generate new population: generate the first generation of the solution
+	\item Generate new population: generate the first generation of the solutions.
 	\item Create new population: applying selection, crossover, and mutation to the previous generation, and get a new population, which should improve the solution.
-	\item Encoding method: binary encoding, use binary string to represent each variable
-	\item Selection: selection a pair of parents and do the crossover and mutation operation on them. Support methods are roulette-wheel, 
-	\item Crossover: exchange bits of binary string between two parents based on crossover probability and produce two children. Support methods are single-point,
-	\item Mutation: mutate bits of children's binary strings based on mutation probability. Support methods are single-point,
+	% \item Encoding method: binary encoding, use binary string to represent each variable
+	\item Selection: selection a pair of parents and do the crossover and mutation operation on them. Support method is roulette-wheel.
+	\item Crossover: exchange bits of binary string between two parents based on crossover probability and produce two children. Support methods are single-point, two-point and uniform.
+	\item Mutation: mutate bits of children's binary strings based on mutation probability. Support methods is flip-bits.
 	\end{itemize}
 
 	\end{multicols}
 	}
 
 	%----------------------------------------------------------------------------------------
-	%	FUTURE RESEARCH
-	%----------------------------------------------------------------------------------------
-
-	\headerbox{Future Research}{name=futureresearch,column=1,span=2,aligned=references,above=bottom}{ % This block is as tall as the references block
-
-	% \begin{multicols}{2}
-	% Integer sed lectus vel mauris euismod suscipit. Praesent a est a est ultricies pellentesque. Donec tincidunt, nunc in feugiat varius, lectus lectus auctor lorem, egestas molestie risus erat ut nibh.
-
-	% Maecenas viverra ligula a risus blandit vel tincidunt est adipiscing. Suspendisse mollis iaculis sem, in \emph{imperdiet} orci porta vitae. Quisque id dui sed ante sollicitudin sagittis.
-	% \end{multicols}
-	}
-
-	%----------------------------------------------------------------------------------------
-	%	CONTACT INFORMATION
-	%----------------------------------------------------------------------------------------
-
-	\headerbox{Contact Information}{name=contact,column=3,aligned=references,above=bottom}{ % This block is as tall as the references block
-
-		\begin{description}
-		% \begin{itemize}
-		\compresslist
-			\item[Web] \url{www.d.umn.edu/~sivelab/}
-			\item[Email] nixxx136@d.umn.edu
-			\item[Phone] +1 (651) 322 0616
-		% \end{itemize}
-		\end{description}
-	}
-
-	%----------------------------------------------------------------------------------------
 	%	STEERABLE GA
 	%----------------------------------------------------------------------------------------
 
-	\headerbox{Steerable GA}{name=steerablega,column=1,span=2,row=1,below=gaexplanation,above=references}{
-
-		\begin{multicols}{2}
-
-		% Define block styles
-
+	\headerbox{Steerable GA}{name=steerablega,column=3,row=0,bottomaligned=gaexplanation}{
 	\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
 	text width=4.5em, text badly centered, node distance=2.5cm, inner sep=0pt]
 	\tikzstyle{block} = [rectangle, draw, fill=blue!20, node distance=2cm,
@@ -245,7 +203,7 @@
 	\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
 	minimum height=2em]
 
-	\hspace*{3.5em}{
+	\hspace*{2.0em}{
 		\begin{tikzpicture}[node distance = 2cm, auto]
 		% \hspace*{3em}
 		% Place nodes
@@ -272,9 +230,101 @@
 	\item Different users give feedback to GA. In our case, those feedback could be the suggestion of the height or location of a building, if the user like a particular solution or not, etc.
 	\item GA takes users feedbacks into account and reproduces the solutions.
 	\item While users keep giving the GA feedback, GA could generate user preferred solutions.
+	\item When the solution converge at some solutions, the GA will terminate itself.
 	\end{itemize}
 
-		\end{multicols}
+
+	}
+
+	%----------------------------------------------------------------------------------------
+	%	FUTURE RESEARCH
+	%----------------------------------------------------------------------------------------
+
+	\headerbox{Future Research}{name=futureresearch,column=1,span=2,aligned=references,above=bottom}{ % This block is as tall as the references block
+
+	\begin{multicols}{2}
+	Our GA has all the genetic algorithm functionalities, however, different variants should be use for different problems. Everyone is welcom to pull our code from Github and make changes for their uses. 
+
+	We applied our human steerable GA in Urban Design Optimization problem, in the future, people could apply it on other complex problems, which human's opinions should take into account.
+
+	% Integer sed lectus vel mauris euismod suscipit. Praesent a est a est ultricies pellentesque. Donec tincidunt, nunc in feugiat varius, lectus lectus auctor lorem, egestas molestie risus erat ut nibh.
+
+	% Maecenas viverra ligula a risus blandit vel tincidunt est adipiscing. Suspendisse mollis iaculis sem, in \emph{imperdiet} orci porta vitae. Quisque id dui sed ante sollicitudin sagittis.
+	\end{multicols}
+	}
+
+	%----------------------------------------------------------------------------------------
+	%	CONTACT INFORMATION
+	%----------------------------------------------------------------------------------------
+
+	\headerbox{Contact Information}{name=contact,column=3,aligned=references,above=bottom}{ % This block is as tall as the references block
+
+		\begin{description}
+		% \begin{itemize}
+		\compresslist
+			\item[Web] \url{www.d.umn.edu/~sivelab/}
+			\item[Email] nixxx136@d.umn.edu
+			\item[Address] University of Minnesota Duluth, Computer Science Department
+		% \end{itemize}
+		\end{description}
+	}
+
+	%----------------------------------------------------------------------------------------
+	%	CURRENT RESULTS
+	%----------------------------------------------------------------------------------------
+
+	\headerbox{Current Results}{name=results,column=1,span=3,row=1,below=gaexplanation,above=references}{
+
+	\begin{multicols}{3}
+	On the right side, we have two simple configuration for two by two blocks. In the configuration:
+	
+	\begin{enumerate}\compresslist
+	\item B means Building area
+	\item G means Park area
+	\item P means Parking area
+	\end{enumerate}
+
+	Our algorithm will give us the best solution for this toy example.
+
+	\vfill
+	\columnbreak
+
+	\begin{tikzpicture}
+
+	% \draw[thick,->] (0,0) -- (4.5,0) node[anchor=north west] {x axis};
+	% \draw[thick,->] (0,0) -- (0,4.5) node[anchor=south east] {y axis};
+
+	% \foreach \x in {0,1,2,3,4}
+	%     \draw (\x cm,1pt) -- (\x cm,-1pt) node[anchor=north] {$\x$};
+	% \foreach \y in {0,1,2,3,4}
+	%     \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
+	% \draw[step=1.5cm,gray,thin] (0,-3) grid (3,0);
+	
+	\draw[black, thin] (0,0) -- (3,0) -- (3,-3) -- (0,-3) -- (0,0);
+	\draw[black, thin] (0,-1.5) -- (3,-1.5);
+	\draw[black, thin] (1.5,0) -- (1.5,-3);
+
+	\filldraw[fill=blue!40!white, draw=black, thin] (0.1,-0.1) rectangle (1.4,-1.4) node[pos=.5] {B};
+	\filldraw[fill=green!40!white, draw=black, thin] (0.1,-1.6) rectangle (1.4,-2.9) node[pos=.5] {G};;
+	\filldraw[fill=blue!40!white, draw=black, thin] (1.6,-1.6) rectangle (2.9,-2.9) node[pos=.5] {B};;
+	\filldraw[fill=yellow!40!white, draw=black, thin] (1.6,-0.1) rectangle (2.9,-1.4) node[pos=.5] {P};;
+
+	\draw[black, thin] (4,0) -- (7,0) -- (7,-3) -- (4,-3) -- (4,0);
+	\draw[black, thin] (4,-1.5) -- (7,-1.5);
+	\draw[black, thin] (5.5,0) -- (5.5,-3);
+
+	\filldraw[fill=blue!40!white, draw=black, thin] (4.1,-0.1) rectangle (5.4,-1.4) node[pos=.5] {B};
+	\filldraw[fill=green!40!white, draw=black, thin] (4.1,-1.6) rectangle (5.4,-2.9) node[pos=.5] {G};;
+	\filldraw[fill=yellow!40!white, draw=black, thin] (5.6,-1.6) rectangle (6.9,-2.9) node[pos=.5] {P};;
+	\filldraw[fill=blue!40!white, draw=black, thin] (5.6,-0.1) rectangle (6.9,-1.4) node[pos=.5] {B};;
+
+	\end{tikzpicture}
+
+	\columnbreak
+
+	When we run the program, we have a environment simulation function, which could help us to evaluate each configuration to get a fitness value. Moreover, people could also select which configuration they like or dislike to affect the fitness value. Since this is only a 2*2 blocks, the number of blocks and combinations are small, but when we have a 200*200 blocks, we will see the advantage of our algorithm. 
+
+	\end{multicols}
 	% 	\vspace{-2em}
 	}
 
