@@ -73,7 +73,7 @@
 	linewidth=2pt % Width of the border lines around content boxes
 	}
 	%----------------------------------------------------------------------------------------
-	%	TITLE SECTION 
+	%	TITLE SECTION
 	%----------------------------------------------------------------------------------------
 	%
 	% {\includegraphics[height=4em]{logo.png}} % First university/lab logo on the left
@@ -115,10 +115,10 @@
 
 	By using the human steerable genetic algorithm, we expect to have a human preferred solution for urban design problem. Human can select different method for selection, crossover, and mutation operations. When we run the human interacted GA, people can change the fitness value for some of the chromosome based on their preference. \\
 
-	Our method will be a good referencese for the future cities designers. Designers could use it to make a cleaner, more eco-friendly, and more comfortable city. Moreover, citizens could also participate in the city design, by giving feedback to the GA system. 
+	Our method will be a good reference for the future cities designers. Designers could use it to make a cleaner, more eco-friendly, and more comfortable city. Moreover, citizens could also participate in the city design, by giving feedback to the GA system.
 	% \begin{enumerate}\compresslist
-	% \item 
-	% \item 
+	% \item
+	% \item
 	% \end{enumerate}
 
 	\vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
@@ -131,10 +131,10 @@
 	\headerbox{GA Explanation}{name=gaexplanation,column=1,span=2,row=0}{
 
 	\begin{multicols}{2}
-	
+
 	% Define block styles
 
-	\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+	\tikzstyle{decision} = [diamond, draw, fill=blue!20,
 	text width=4.5em, text badly centered, node distance=2.5cm, inner sep=0pt]
 	\tikzstyle{block} = [rectangle, draw, fill=blue!20, node distance=2cm,
 	text width=6em, text centered, rounded corners, minimum height=1em]
@@ -195,43 +195,53 @@
 	%----------------------------------------------------------------------------------------
 
 	\headerbox{Steerable GA}{name=steerablega,column=3,row=0,bottomaligned=gaexplanation}{
-	\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
-	text width=4.5em, text badly centered, node distance=2.5cm, inner sep=0pt]
-	\tikzstyle{block} = [rectangle, draw, fill=blue!20, node distance=2cm,
-	text width=6em, text centered, rounded corners, minimum height=1em]
-	\tikzstyle{line} = [draw, -latex']
-	\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
-	minimum height=2em]
 
-	\hspace*{2.0em}{
-		\begin{tikzpicture}[node distance = 2cm, auto]
-		% \hspace*{3em}
-		% Place nodes
-		\node [block, text centered, minimum height=12em] (ga) {Genetic Algorithm};
-		\node [block, right = 1.5cm of ga, yshift=1.7cm, fill=red!20] (feedback1) {feedback1};
-		\node [block, below = .5cm of feedback1, fill=red!20] (feedback2) {feedback2};
-		\node [block, below = .5cm of feedback2, fill=red!20] (feedback3) {feedback3};
-		\node (e1)[below = 0.4 cm of feedback3]{\LARGE .};
-		\node (e2)[below = 0.6 cm of feedback3]{\LARGE .};
-		\node (e3)[below = 0.8 cm of feedback3]{\LARGE .};
-		\node [block, below = 1.2cm of feedback3, fill=red!20] (feedbackN) {feedbackN};
+	% \tikzstyle{decision} = [diamond, draw, fill=blue!20,
+	% text width=4.5em, text badly centered, node distance=2.5cm, inner sep=0pt]
+	% \tikzstyle{block} = [rectangle, draw, fill=blue!20, node distance=2cm,
+	% text width=6em, text centered, rounded corners, minimum height=1em]
+	% \tikzstyle{line} = [draw, -latex']
+	% \tikzstyle{cloud} = [draw, ellipse, fill=red!20, node distance=3cm,
+	% minimum height=2em]
 
-		    % Draw edges
-	    \path [line] (feedback1.west) -- (feedback1.west -| ga.east);
-	    \path [line] (feedback2.west) -- (feedback2.west -| ga.east);
-	    \path [line] (feedback3.west) -- (feedback3.west -| ga.east);
-	    \path [line] (feedbackN.west) -- (feedbackN.west -| ga.east);
+	% \hspace*{2.0em}{
+		% \begin{tikzpicture}[node distance = 2cm, auto]
+		% % \hspace*{3em}
+		% % Place nodes
+		% \node [block, text centered, minimum height=12em] (ga) {Genetic Algorithm};
+		% \node [block, right = 1.5cm of ga, yshift=1.7cm, fill=red!20] (feedback1) {feedback1};
+		% \node [block, below = .5cm of feedback1, fill=red!20] (feedback2) {feedback2};
+		% \node [block, below = .5cm of feedback2, fill=red!20] (feedback3) {feedback3};
+		% \node (e1)[below = 0.4 cm of feedback3]{\LARGE .};
+		% \node (e2)[below = 0.6 cm of feedback3]{\LARGE .};
+		% \node (e3)[below = 0.8 cm of feedback3]{\LARGE .};
+		% \node [block, below = 1.2cm of feedback3, fill=red!20] (feedbackN) {feedbackN};
 
-		\end{tikzpicture}
-	}
+		%     % Draw edges
+	 %    \path [line] (feedback1.west) -- (feedback1.west -| ga.east);
+	 %    \path [line] (feedback2.west) -- (feedback2.west -| ga.east);
+	 %    \path [line] (feedback3.west) -- (feedback3.west -| ga.east);
+	 %    \path [line] (feedbackN.west) -- (feedbackN.west -| ga.east);
 
-	\begin{itemize}\compresslist
-	\item GA is running at server side.
-	\item Different users give feedback to GA. In our case, those feedback could be the suggestion of the height or location of a building, if the user like a particular solution or not, etc.
-	\item GA takes users feedbacks into account and reproduces the solutions.
-	\item While users keep giving the GA feedback, GA could generate user preferred solutions.
-	\item When the solution converge at some solutions, the GA will terminate itself.
-	\end{itemize}
+		% \end{tikzpicture}
+	% }
+	% \begin{figure}
+	%   \includegraphics[width=\linewidth]{2sin.png}
+	%   \caption{A boat.}
+	%   \label{fig:boat1}
+	% \end{figure}
+
+	{\includegraphics[height=18em]{2sin.png}}
+
+	For example, we have a one variable equation which is 2*sin(x), in domain between 0 and pi, and we want to find the maximum value of it. Obviously, when x equals pi/2 we get the optimal solution. However, for some reason, we can not select from that region, instead, we think when x equals 0.914 or 9*pi/10, we can have better result. So we increase the probability to get those two values as our result by giving the GA our feedback such as, like or dislike.
+
+	% \begin{itemize}\compresslist
+	% \item GA is running at server side.
+	% \item Different users give feedback to GA. In our case, those feedback could be the suggestion of the height or location of a building, if the user like a particular solution or not, etc.
+	% \item GA takes users feedbacks into account and reproduces the solutions.
+	% \item While users keep giving the GA feedback, GA could generate user preferred solutions.
+	% \item When the solution converge at some solutions, the GA will terminate itself.
+	% \end{itemize}
 
 
 	}
@@ -243,13 +253,10 @@
 	\headerbox{Future Research}{name=futureresearch,column=1,span=2,aligned=references,above=bottom}{ % This block is as tall as the references block
 
 	\begin{multicols}{2}
-	Our GA has all the genetic algorithm functionalities, however, different variants should be use for different problems. Everyone is welcom to pull our code from Github and make changes for their uses. 
+	Our GA has all the genetic algorithm functionalities, however, different variants should be use for different problems. Everyone is welcome to pull our code from Github and make changes for their uses.
 
 	We applied our human steerable GA in Urban Design Optimization problem, in the future, people could apply it on other complex problems, which human's opinions should take into account.
 
-	% Integer sed lectus vel mauris euismod suscipit. Praesent a est a est ultricies pellentesque. Donec tincidunt, nunc in feugiat varius, lectus lectus auctor lorem, egestas molestie risus erat ut nibh.
-
-	% Maecenas viverra ligula a risus blandit vel tincidunt est adipiscing. Suspendisse mollis iaculis sem, in \emph{imperdiet} orci porta vitae. Quisque id dui sed ante sollicitudin sagittis.
 	\end{multicols}
 	}
 
@@ -277,7 +284,7 @@
 
 	\begin{multicols}{3}
 	On the right side, we have two simple configuration for two by two blocks. In the configuration:
-	
+
 	\begin{enumerate}\compresslist
 	\item B means Building area
 	\item G means Park area
@@ -291,15 +298,6 @@
 
 	\begin{tikzpicture}
 
-	% \draw[thick,->] (0,0) -- (4.5,0) node[anchor=north west] {x axis};
-	% \draw[thick,->] (0,0) -- (0,4.5) node[anchor=south east] {y axis};
-
-	% \foreach \x in {0,1,2,3,4}
-	%     \draw (\x cm,1pt) -- (\x cm,-1pt) node[anchor=north] {$\x$};
-	% \foreach \y in {0,1,2,3,4}
-	%     \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
-	% \draw[step=1.5cm,gray,thin] (0,-3) grid (3,0);
-	
 	\draw[black, thin] (0,0) -- (3,0) -- (3,-3) -- (0,-3) -- (0,0);
 	\draw[black, thin] (0,-1.5) -- (3,-1.5);
 	\draw[black, thin] (1.5,0) -- (1.5,-3);
@@ -322,78 +320,11 @@
 
 	\columnbreak
 
-	When we run the program, we have a environment simulation function, which could help us to evaluate each configuration to get a fitness value. Moreover, people could also select which configuration they like or dislike to affect the fitness value. Since this is only a 2*2 blocks, the number of blocks and combinations are small, but when we have a 200*200 blocks, we will see the advantage of our algorithm. 
+	When we run the program, we have a environment simulation function, which could help us to evaluate each configuration to get a fitness value. Moreover, people could also select which configuration they like or dislike to affect the fitness value. Since this is only a 2*2 blocks, the number of blocks and combinations are small, but when we have a 200*200 blocks, we will see the advantage of our algorithm.
 
 	\end{multicols}
 	% 	\vspace{-2em}
 	}
-
-	%----------------------------------------------------------------------------------------
-	%	MATERIALS AND METHODS
-	%----------------------------------------------------------------------------------------
-
-	% \headerbox{Materials \& Methods}{name=method,column=0,below=abstract,above=references}{ % This block's bottom aligns with the bottom of the conclusion block
-
-	% The following materials were required to complete the research:
-
-	% \begin{itemize}\compresslist
-	% \item Curabitur pellentesque dignissim
-	% \item Eu facilisis est tempus quis
-	% \item Duis porta consequat lorem
-	% \item Eu facilisis est tempus quis
-	% \end{itemize}
-
-	% The following equations were used for statistical analysis:
-
-	% \begin{equation}
-	% \cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
-	% \label{eq:refname}
-	% \end{equation}\
-
-	% \begin{equation}
-	% E = mc^{2}
-	% \label{eqn:Einstein}
-	% \end{equation}
-
-	% Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin. Proin sollicitudin. Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh.
-	% }
-
-	%----------------------------------------------------------------------------------------
-	%	RESULTS 2
-	%----------------------------------------------------------------------------------------
-
-	% \headerbox{Results 2}{name=results2,column=1,below=abstract,bottomaligned=conclusion}{ % This block's bottom aligns with the bottom of the conclusion block
-
-	% Donec faucibus purus at tortor egestas eu fermentum dolor facilisis. Maecenas tempor dui eu neque fringilla rutrum. Mauris \emph{lobortis} nisl accumsan.
-
-	% \begin{center}
-	% \begin{tabular}{l l l}
-	% \toprule
-	% \textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-	% \midrule
-	% Treatment 1 & 0.0003262 & 0.562 \\
-	% Treatment 2 & 0.0015681 & 0.910 \\
-	% Treatment 3 & 0.0009271 & 0.296 \\
-	% \bottomrule
-	% \end{tabular}
-	% \captionof{table}{Table caption}
-	% \end{center}
-
-	% Nulla ut porttitor enim. Suspendisse venenatis dui eget eros gravida tempor. Mauris feugiat elit et augue placerat ultrices. Morbi accumsan enim nec tortor consectetur non commodo.
-
-	% \begin{center}
-	% \begin{tabular}{l l l}
-	% \toprule
-	% \textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-	% \midrule
-	% Treatment 1 & 0.0003262 & 0.562 \\
-	% Treatment 2 & 0.0015681 & 0.910 \\
-	% Treatment 3 & 0.0009271 & 0.296 \\
-	% \bottomrule
-	% \end{tabular}
-	% \captionof{table}{Table caption}
-	% \end{center}
-	% }
 
 	%----------------------------------------------------------------------------------------
 
